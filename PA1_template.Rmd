@@ -58,7 +58,7 @@ Calculate and report the total number of missing values in the dataset (i.e. the
 sum(is.na(act$steps))
 ```
 
-Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
+The strategy for filling in all of the missing values in the dataset is to use the mean for the 5-minute interval.
 ```{r}
 names(intervalmean)[2] <- "interval_avg_steps"
 merged <- merge(act, intervalmean, by = "interval")
